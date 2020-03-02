@@ -2,9 +2,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Plan your Travel</title>
 </head>
 <body>
+    <header>
+        <h1>Plan your Travel</h1>
+    </header>
+    <section id="input">
+        <form action="getTravelInput">
+            <input type="text" name="city" id="cityInput">
+            <input type="date" name="date" id="dateInput">
+            <input type="submit" value="Request Travel Info">
+        </form>
+    </section>
+    <section id="result" class="row">
+        <div id="cityPic" class="col"><img src="/src/client/media/pictures/old-1130731_640.jpg" alt="Picture of Travel" class="featureImg"></div>
+        <div id="weatherInfo" class="col">weather info comes here</div>
+    </section>
+    <footer>
+        <p>This is a footer</p>
+    </footer>
     
 </body>
 </html>

@@ -1,7 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebPackPlugin = require("html-webpack-plugin")
-const workboxPlugin = require('workbox-webpack-plugin');
+// const workboxPlugin = require('workbox-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
@@ -36,10 +36,12 @@ module.exports = {
             filename: "./index.html",
         }),
         new MiniCssExtractPlugin({filename: '[name].css'}),
+        /* // Add Serviceworker at the very end of the project back in
         new workboxPlugin.GenerateSW({
             swDest: 'sw.js',
             clientsClaim: true,
             skipWaiting: true,
-          })
+          }) 
+          */
        ]
 }
