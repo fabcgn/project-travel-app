@@ -3,7 +3,7 @@ let featureImg = document.getElementById("cityPic").src
 const exchangeImg = (frame, image) => {
     setTimeout(() => {
         document.getElementById(frame).src = image
-    }, 1000);
+    }, 3000); // TODO: Delete Delay later
     
 }   
 
