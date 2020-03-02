@@ -15,3 +15,4 @@ getLocation = async (city) => {
 }
 
 getLocation("Köln")
+
