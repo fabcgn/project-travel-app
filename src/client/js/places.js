@@ -2,7 +2,7 @@
 const geoNameUserName = "fabcgn"
 
 /* Function to get the current temperature by ZIP Code*/
-getLatLng = async (city) => {
+const getLatLng = async (city) => {
     const res = await fetch("http://api.geonames.org/postalCodeSearchJSON?placename="+city+"&maxRows=10&username="+geoNameUserName)
     try {
         const place = await res.json();
@@ -17,4 +17,4 @@ getLatLng = async (city) => {
 }
 
 getLatLng("New York")
-
+export {getLatLng}
