@@ -1,7 +1,7 @@
 /* Global Variables */
 const pixabayApiKey = "15458697-86a1b8fb3157401dfeb55f13a"
 
-/* Fucntion to exchange any image src by ID after delay */
+/* Function to exchange any image src by ID after delay */
 const exchangeImg = (frame, image, alt, delay) => {
     setTimeout(() => {
         document.getElementById(frame).src = image
@@ -23,5 +23,3 @@ export const changeImageBySearchterm = async (frame, searchTerm) => {
         console.log("ERROR",error)
     }
 }
-
-changeImageBySearchterm("cityPic","Cologne") // running this in here works great

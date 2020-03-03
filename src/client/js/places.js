@@ -1,8 +1,8 @@
 /* Global Variables */
 const geoNameUserName = "fabcgn"
 
-/* Function to get the current temperature by ZIP Code*/
-const getLatLng = async (city) => {
+/* Function to get the Latitute and Longitude from a City Name*/
+export const getLatLng = async (city) => {
     const res = await fetch("http://api.geonames.org/postalCodeSearchJSON?placename="+city+"&maxRows=10&username="+geoNameUserName)
     try {
         const place = await res.json();
@@ -15,6 +15,3 @@ const getLatLng = async (city) => {
         console.log("ERROR",error)
     }
 }
-
-getLatLng("New York") // Running this in here works great!
-export {getLatLng}

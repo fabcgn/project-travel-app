@@ -1,3 +1,8 @@
-export const start = () => {
-    Client.getLatLng("Berlin") // TODO: This does not work. Uncaught TypeError: Cannot read property 'getLatLng' of undefined
+import { getLatLng } from './places'
+import { changeImageBySearchterm } from './pictures'
+
+
+export const start = (city) => {
+    getLatLng(city),
+    changeImageBySearchterm("cityPic",city)
 }
