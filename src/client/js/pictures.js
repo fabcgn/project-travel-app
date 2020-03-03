@@ -13,9 +13,10 @@ const changeImageBySearchterm = async (frame, searchTerm) => {
     const res = await fetch("https://pixabay.com/api/?key="+pixabayApiKey+"&q="+searchTerm+"&image_type=photo")
     try {
         const picture = await res.json();
-        console.log(picture.hits[0].webformatURL)
-        console.log(picture.hits[0])
-        exchangeImg (frame, picture.hits[0].webformatURL, 100)
+        console.log(picture.hits)
+        console.log(picture.hits.length)
+        const randomEntry = Math.floor(Math.random() * picture.hits.length) // chooses a random picture to display
+        exchangeImg (frame, picture.hits[randomEntry].webformatURL, 100)
         return "success";
     } catch(error){
         exchangeImg (frame, "/src/client/media/pictures/hiker-918473_640.jpg", 100)
@@ -23,4 +24,4 @@ const changeImageBySearchterm = async (frame, searchTerm) => {
     }
 }
 
-changeImageBySearchterm("cityPic","jkdf,asm.fkfjdsnfgödfjksdnvcjk")
+changeImageBySearchterm("cityPic","Cologne")
