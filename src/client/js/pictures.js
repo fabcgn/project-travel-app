@@ -15,7 +15,7 @@ export const changeImageBySearchterm = async (frame, searchTerm) => {
     try {
         const picture = await res.json();
         const randomEntry = Math.floor(Math.random() * picture.hits.length) // chooses a random picture to display
-        console.log(picture.hits[randomEntry])
+        //console.log(picture.hits[randomEntry])
         exchangeImg (frame, picture.hits[randomEntry].webformatURL, searchTerm, 0)
         return "success";
     } catch(error){
