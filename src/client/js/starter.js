@@ -1,3 +1,3 @@
 export const start = () => {
-    Client.getLatLng("Berlin")
+    Client.getLatLng("Berlin") // TODO: This does not work. Uncaught TypeError: Cannot read property 'getLatLng' of undefined
 }

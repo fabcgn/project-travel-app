@@ -2,7 +2,7 @@ import { start } from './js/starter'
 import { getLatLng } from './js/places'
 import { changeImageBySearchterm } from './js/pictures'
 
-start()
+start() // This is called properly and triggers
 
 import './styles/base.scss'
 import './styles/form.scss'

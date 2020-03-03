@@ -19,9 +19,9 @@ export const changeImageBySearchterm = async (frame, searchTerm) => {
         exchangeImg (frame, picture.hits[randomEntry].webformatURL, searchTerm, 0)
         return "success";
     } catch(error){
-        exchangeImg (frame, "/src/client/media/pictures/hiker-918473_640.jpg", 0)
+        exchangeImg (frame, "/src/client/media/pictures/hiker-918473_640.jpg", "travels",0)
         console.log("ERROR",error)
     }
 }
 
-// changeImageBySearchterm("cityPic","Cologne")
+changeImageBySearchterm("cityPic","Cologne") // running this in here works great

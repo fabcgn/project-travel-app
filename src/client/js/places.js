@@ -16,5 +16,5 @@ const getLatLng = async (city) => {
     }
 }
 
-getLatLng("New York")
+getLatLng("New York") // Running this in here works great!
 export {getLatLng}
