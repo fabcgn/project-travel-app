@@ -1,4 +1,3 @@
-import exchangeImg from './js/updateImage.js'
 import getLatLng from './js/places.js'
 import getImage from './js/pictures.js'
 
