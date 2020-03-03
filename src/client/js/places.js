@@ -1,3 +1,5 @@
+import { requestWeather } from './weather'
+
 /* Global Variables */
 const geoNameUserName = "fabcgn"
 
@@ -10,7 +12,11 @@ export const getLatLng = async (city) => {
         //console.log("Lat="+place.postalCodes[0].lat)
         //console.log("Lng="+place.postalCodes[0].lng)
         //console.log("CountryCode="+place.postalCodes[0].countryCode)
-        return place.postalCodes[0];
+        const lat = place.postalCodes[0].lat
+        const lng = place.postalCodes[0].lng
+        const countryCode = place.postalCodes[0].countryCode
+        // console.log({"lat": lat, "lng": lng, "countryCode": countryCode})
+        return {"lat": lat, "lng": lng, "countryCode": countryCode};
     } catch(error){
         console.log("ERROR",error)
     }

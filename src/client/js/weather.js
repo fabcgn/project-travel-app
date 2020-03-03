@@ -2,6 +2,25 @@
 const darkskyApiKey = "3986942eeca21b41228cea69abf48866"
 
 /* Function to get the Latitute and Longitude from a City Name*/
+
+export const requestWeather = async (array) => {
+    const res = await fetch ('http://localhost:8080/weather', {
+        method: "POST",
+        cache: "no-cache", 
+        credentials: "same-origin",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        redirect: "follow",
+        body: JSON.stringify({text: array})
+    })
+    console.log(res.json())
+    return res
+}
+
+requestWeather(53,10,1583273742)
+
+/* 
 export const getWeather = async (lat,lng, time) => {
     const res = await fetch("https://api.darksky.net/forecast/"+darkskyApiKey+"/"+lat+","+lng+","+time)
     try {
@@ -13,4 +32,4 @@ export const getWeather = async (lat,lng, time) => {
     }
 }
 
-getWeather(53,10,1583273742)
+getWeather(53,10,1583273742) */
