@@ -5,7 +5,7 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const bodyParser = require('body-parser')
-const fetch = require("node-fetch");
+const axios = require('axios').default;
 
 
 app.use(cors())
@@ -27,46 +27,30 @@ app.listen(port, function () {
     console.log('Example app listening on port '+port+'! Go to http://localhost:'+port+'/')
 })
 
-// consts for the API
-const postRequest = './handle';
-const geoNames = 'api.geonames.org/postalCodeSearchJSON?';
-const darkSky = 'api.darksky.net/forecast';
-const pixabayApi = 'pixabay.com/api';
-let projectData = {}; 
-
-
 // API for DarkSky
 const darkskyApiKey = "3986942eeca21b41228cea69abf48866"
 
-const getWeather = async (lat,lng, time) => {
-    const res = await fetch("https://api.darksky.net/forecast/3986942eeca21b41228cea69abf48866/10,50,1583346094")
-    try {
-        const weather = await res.json();
-        console.log(weather)
-        return weather;
-    } catch(error){
-        console.log("ERROR",error)
-    }
-}
-
-const test = async () => {
-    const res = await fetch ("http://dummy.restapiexample.com/api/v1/employee/5")
-    .then(res => res.json())
-}
-
-
 // Post Route for darkSky API
-app.get("/weather", async (req, res) => {
-    const dog = await fetch ("https://api.darksky.net/forecast/3986942eeca21b41228cea69abf48866/10,50,1583346094")
-    try {
-        res.json(dog);
-    } catch (error) {
-        console.log("ERROR",error)
-    }
+app.get("/weather", (req, res) => {
+    axios({
+        method: "get",
+        url: "https://api.darksky.net/forecast/3986942eeca21b41228cea69abf48866/10,50,1583346094"
+    })
+    .then(function (response) {
+        console.log(response);
+        res.send(response.data)
+      })    
+    .catch(error=>{
+        console.log('error',error)      
+        res.send(error)
+    })     
    });
 
+   app.get("/testrob", (req, res) => {
+       res.send(JSON.parse('{"test": "test"}'))
+   })
 
-
+//http://dummy.restapiexample.com/api/v1/employee/5
    // https://api.darksky.net/forecast/3986942eeca21b41228cea69abf48866/10,50,1583346094
 /* 
 Global Variables
