@@ -3,7 +3,7 @@ import { getLatLng } from './js/places'
 import { changeImageBySearchterm } from './js/pictures'
 import { getWeather } from './js/weather'
 
-start("Hamburg") // This is called properly and triggers
+start("Köln") // This is called properly and triggers
 
 import './styles/base.scss'
 import './styles/form.scss'
