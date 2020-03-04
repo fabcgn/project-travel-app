@@ -28,13 +28,14 @@ app.listen(port, function () {
 })
 
 // API for DarkSky
-const darkskyApiKey = "3986942eeca21b41228cea69abf48866"
-const lat = 10
-const lng = 50
-const time = 1583346094
+const darkskyApiKey = process.env.DARKSKY_API_KEY
+
 
 // Post Route for darkSky API
 app.get("/weather", (req, res) => {
+    const lat = 10
+    const lng = 50
+    const time = 1583346095
     axios({
         method: "get",
         url: `https://api.darksky.net/forecast/${darkskyApiKey}/${lat},${lng},${time}`
