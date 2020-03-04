@@ -11,8 +11,6 @@ export const start = async (city) => {
     document.getElementById("lat").innerText = `Latitude: ${latLng.lat}`
     document.getElementById("lng").innerText = `Longitude: ${latLng.lng}`
     document.getElementById("country").innerText = `Country: ${latLng.countryCode}`
-    const weather = await getWeather({"lat": latLng.lat, "lng": latLng.lng, "time": 1583346094})
-    console.log(weather)
-    // const weather = await requestWeather({lat: 53.5521285714286, lng: 10.0004285714286, countryCode: "DE"}
-    // console.log(weather.lng)
+    const weatherResult = await getWeather({"lat": latLng.lat, "lng": latLng.lng, "time": 1583341111})
+
 }
