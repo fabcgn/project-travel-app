@@ -10,6 +10,7 @@ const axios = require('axios').default;
 
 app.use(cors())
 app.use(express.static('dist'))
+app.use(express.urlencoded());
 
 app.use(bodyParser.urlencoded({
     extended: true
@@ -32,20 +33,23 @@ const darkskyApiKey = process.env.DARKSKY_API_KEY
 
 
 // Post Route for darkSky API
-app.get("/weather", (req, res) => {
-    const lat = 10
-    const lng = 50
-    const time = 1583346095
+app.post("/weather", (req, res) => {
+    console.log("----")
+    console.log(req)
+    console.log("----")
+    const lat = req.lat
+    const lng = req.lng
+    const time = req.time
     axios({
         method: "get",
         url: `https://api.darksky.net/forecast/${darkskyApiKey}/${lat},${lng},${time}`
     })
     .then(function (response) {
-        console.log(response);
+        // console.log(response);
         res.send(response.data.currently)
       })    
     .catch(error=>{
-        console.log('error',error)      
+        //console.log('error',error)      
         res.send(error)
     })     
    });
