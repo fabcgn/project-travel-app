@@ -5,6 +5,8 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const bodyParser = require('body-parser')
+const axios = require('axios'); // https://github.com/laicuRoot/Travel-App-Website/blob/master/src/server/server.js
+
 
 app.use(cors())
 app.use(express.static('dist'))
@@ -20,14 +22,31 @@ app.get('/', function (req, res) {
 })
 
 // designates what port the app will listen to for incoming requests
-app.listen(8080, function () {
-    console.log('Example app listening on port 8080! Go to http://localhost:8080/')
+const port = 8080
+app.listen(port, function () {
+    console.log('Example app listening on port '+port+'! Go to http://localhost:'+port+'/')
 })
+
+// API for DarkSky
+const darkSkyApi = async (key, latitude, long, time) => {
+    const res = await fetch(`https://api.darksky.net/forecast/${key}/${latitude},${long},${time}`)
+    try {
+        const weather = await res.json();
+        console.log(weather)
+        return weather;
+    } catch (error) {
+        console.log("ERROR",error)
+
+    }
+}
+const darkskyApiKey = process.env.DARKSKY_API_KEY
+
 
 
 // Post Route for Weather API
-app.post("/weather", (req, res) => {
-    return req
+app.post("/weather", async (req, res) => {
+    res = await darkSkyApi(darkskyApiKey, req.query.lat, req.lng, req.query.time)
+    return res
 }
 )
 

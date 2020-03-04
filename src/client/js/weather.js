@@ -12,13 +12,13 @@ export const requestWeather = async (array) => {
           "Content-Type": "application/json"
         },
         redirect: "follow",
-        body: JSON.stringify({text: array})
+        body: JSON.stringify({array})
     })
-    console.log(res.json())
+    console.log(res)
     return res
 }
 
-requestWeather(53,10,1583273742)
+requestWeather({"lat":53.5521285714286,"lng":10.0004285714286,"countryCode":"DE"})
 
 /* 
 export const getWeather = async (lat,lng, time) => {
