@@ -35,21 +35,21 @@ const darkskyApiKey = process.env.DARKSKY_API_KEY
 // Post Route for darkSky API
 app.post("/weather", (req, res) => {
     console.log("----")
-    console.log(req)
+    console.log(req.query)
     console.log("----")
-    const lat = req.lat
-    const lng = req.lng
-    const time = req.time
+    const lat = req.query.lat
+    const lng = req.query.lng
+    const time = req.query.time
     axios({
         method: "get",
         url: `https://api.darksky.net/forecast/${darkskyApiKey}/${lat},${lng},${time}`
     })
     .then(function (response) {
-        // console.log(response);
+        console.log('RESPONSE',response.data.currently);
         res.send(response.data.currently)
       })    
     .catch(error=>{
-        //console.log('error',error)      
+        console.log('ERROR',error)      
         res.send(error)
     })     
    });

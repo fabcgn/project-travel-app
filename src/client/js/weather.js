@@ -1,13 +1,14 @@
 /* Global Variables */
 
 export const getWeather = async (data) => {
-    const res = await fetch(`http://localhost:8080/weather`, {
+    const res = await fetch(`http://localhost:8080/weather?lat=10&lng=50&time=1583346094`, {
         method: 'POST',
         headers: {
             'Content-Type':'application.json'
         },
-        body: JSON.stringify({data})
+        body: JSON.stringify(data) // TODO: Fix the body to appear in server.js
     })
+    console.log(res)
 }
 
 /* Function to POST data */
