@@ -8,7 +8,7 @@ export const getWeather = async (data) => {
         }
     })
     console.log(res)
-    document.getElementById("weather").innerText = JSON.stringify(res.status)
+    document.getElementById("weather").innerText = JSON.stringify(res.status) //TODO: Make this work
 }
 
 /* Function to POST data */
