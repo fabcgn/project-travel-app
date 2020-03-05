@@ -12,7 +12,7 @@
     <section id="input">
         <form action="getTravelInput">
             <input type="text" name="city" id="cityInput">
-            <input type="date" name="date" id="dateInput">
+            <input type="date" name="date" id="dateInput" value=today()>
             <input id="requestButton" type="submit" value="Request Travel Info">
         </form>
     </section>
@@ -31,13 +31,15 @@
     <footer>
         <div id="imageRef">
             <p>All images by:</p>
-            <a href="https://pixabay.com/" target="_blank"><img src="/src/client/media/logos/pixabay.svg" alt="All Pictures by Pixabay" class="srcLogo"></a>
+            <a href="https://pixabay.com/" target="_blank"><img src="/src/client/media/logos/pixabay.svg" alt="Pixabay" class="srcLogo"></a>
         </div>
         <div id="weaterRef">
             <p>Weatherdata by:</p>
+            <a href="https://darksky.net/dev" target="_blank"><img src="/src/client/media/logos/darksky.png" alt="darksky API" class="srcLogo"></a>
         </div>
         <div id="locationRef">
             <p>Locationinfo by:</p>
+            <a href="https://www.geonames.org/" target="_blank"><img src="/src/client/media/logos/geonamesorg.png" alt="geonames.org" class="srcLogo"></a>
         </div>
     </footer>
     
