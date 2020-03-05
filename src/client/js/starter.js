@@ -1,7 +1,7 @@
 import { getLatLng } from './places'
 import { changeImageBySearchterm } from './pictures'
 import { getWeather } from './weather'
-import { getUnixTimeCode } from './dateCalc';
+import { getUnixTimeCode } from './dateCalc'
 
 const submitButton = document.getElementById("requestButton")
 export const listener = submitButton.addEventListener('click',function(event){
@@ -9,7 +9,7 @@ export const listener = submitButton.addEventListener('click',function(event){
     const city = document.getElementById("cityInput").value
     console.log("clicked "+city)
     start(city)
-}); 
+})
 
 const start = async (city) => {
     const latLng = await getLatLng(city)

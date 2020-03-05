@@ -53,28 +53,3 @@ app.post("/weather", (req, res) => {
         res.send(error)
     })     
    });
-
-   app.get("/testrob", (req, res) => {
-       res.send(JSON.parse('{"test": "test"}'))
-   })
-
-//http://dummy.restapiexample.com/api/v1/employee/5
-   // https://api.darksky.net/forecast/3986942eeca21b41228cea69abf48866/10,50,1583346094
-/* 
-Global Variables
-const darkskyApiKey = "3986942eeca21b41228cea69abf48866"
-
-Function to get the Latitute and Longitude from a City Name
-export const getWeather = async (lat,lng, time) => {
-    const res = await fetch("https://api.darksky.net/forecast/"+darkskyApiKey+"/"+lat+","+lng+","+time)
-    try {
-        const weather = await res.json();
-        console.log(weather)
-        return weather;
-    } catch(error){
-        console.log("ERROR",error)
-    }
-}
-
-getWeather(53,10,1583273742)
-*/
