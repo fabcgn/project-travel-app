@@ -1,1 +1,0 @@
-const submitButton = document.getElementById("requestButton")
