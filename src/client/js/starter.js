@@ -1,6 +1,7 @@
 import { getLatLng } from './places'
 import { changeImageBySearchterm } from './pictures'
 import { getWeather } from './weather'
+import { getUnixTimeCode } from './dateCalc';
 
 const submitButton = document.getElementById("requestButton")
 export const listener = submitButton.addEventListener('click',function(event){
@@ -18,6 +19,6 @@ const start = async (city) => {
     document.getElementById("lat").innerText = `Latitude: ${latLng.lat}`
     document.getElementById("lng").innerText = `Longitude: ${latLng.lng}`
     document.getElementById("country").innerText = `Country: ${latLng.countryCode}`
-    console.log(document.getElementById("dateInput").value)
-    await getWeather({"lat": latLng.lat, "lng": latLng.lng, "time": 1583341111})
+    const date = getUnixTimeCode(document.getElementById("dateInput").value)
+    await getWeather({"lat": latLng.lat, "lng": latLng.lng, "time": date})
 }
