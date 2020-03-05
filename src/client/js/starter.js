@@ -2,6 +2,11 @@ import { getLatLng } from './places'
 import { changeImageBySearchterm } from './pictures'
 import { getWeather } from './weather'
 
+const submitButton = document.getElementById("requestButton")
+export const listener = submitButton.addEventListener('click',function(event){
+    event.preventDefault()
+    start("New York")
+}); 
 
 export const start = async (city) => {
     const latLng = await getLatLng(city)
