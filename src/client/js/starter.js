@@ -12,5 +12,4 @@ export const start = async (city) => {
     document.getElementById("lng").innerText = `Longitude: ${latLng.lng}`
     document.getElementById("country").innerText = `Country: ${latLng.countryCode}`
     const weatherResult = await getWeather({"lat": latLng.lat, "lng": latLng.lng, "time": 1583341111})
-
 }

@@ -42,11 +42,11 @@ app.post("/weather", (req, res) => {
     const time = req.query.time
     axios({
         method: "get",
-        url: `https://api.darksky.net/forecast/${darkskyApiKey}/${lat},${lng},${time}`
+        url: `https://api.darksky.net/forecast/${darkskyApiKey}/${lat},${lng},${time}?exclude=minutly,hourly,daily,alerts,flags`
     })
     .then(function (response) {
-        console.log('RESPONSE',response.data.currently);
-        res.send(response.data.currently)
+        console.log('RESPONSE',response.data);
+        res.json(response.data)
       })    
     .catch(error=>{
         console.log('ERROR',error)      

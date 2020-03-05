@@ -7,8 +7,11 @@ export const getWeather = async (data) => {
             'Content-Type':'application.json'
         }
     })
-    console.log(res)
-    document.getElementById("weather").innerText = JSON.stringify(res.status) //TODO: Make this work
+    const updateUI = (result) => {
+        console.log(result)
+        document.getElementById("weather").innerHTML = JSON.stringify(result)  //TODO: Make this work
+    }
+    updateUI(res.status)
 }
 
 /* Function to POST data */
