@@ -5,7 +5,9 @@ import { getWeather } from './weather'
 const submitButton = document.getElementById("requestButton")
 export const listener = submitButton.addEventListener('click',function(event){
     event.preventDefault()
-    start("New York")
+    const city = document.getElementById("cityInput").value
+    console.log("clicked "+city)
+    start(city)
 }); 
 
 export const start = async (city) => {
