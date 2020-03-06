@@ -44,9 +44,9 @@ app.post("/weather", (req, res) => {
         method: "get",
         url: `https://api.darksky.net/forecast/${darkskyApiKey}/${lat},${lng},${time}?exclude=minutly,hourly,alerts,flags`
     })
-    .then(function (response) {
-        console.log('RESPONSE',response.data.daily);
-        res.json(response.data.daily)
+    .then(response=> {
+        console.log('RESPONSE',response.data.daily.data);
+        return res.jsonp(response.data.daily.data)
       })    
     .catch(error=>{
         console.log('ERROR',error)      

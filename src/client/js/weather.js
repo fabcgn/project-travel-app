@@ -11,5 +11,6 @@ export const getWeather = async (data) => {
         console.log(result)
         document.getElementById("weather").innerHTML = JSON.stringify(result)  //TODO: Make this work
     }
-    updateUI(res.status)
+    updateUI(res.body)
 }
+getWeather({ lat: '52.5179', lng: '13.3759', time: '1585180800' })
