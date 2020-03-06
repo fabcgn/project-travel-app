@@ -18,6 +18,8 @@ export const listener2 = restartButton.addEventListener('click',function(event){
     trip = {}
     inputCard.classList.remove("hide")
     outputCard.classList.add("hide")
+    inputCard.classList.add("card")
+    outputCard.classList.remove("card")
 })
 
 let trip = {}
@@ -45,11 +47,10 @@ const updateUI = () => {
     document.getElementById("cityPic").src = trip.img
     document.getElementById("cityPic").alt = `Image of ${trip.City}`
     document.getElementById("city").innerText = `City: ${trip.City}`
-    document.getElementById("lat").innerText = `Latitude: ${trip.Latitude}`
-    document.getElementById("lng").innerText = `Longitude: ${trip.Longitude}`
     document.getElementById("country").innerText = `Country: ${trip.Country}`
     document.getElementById("weather").innerText = `Weather: Between ${trip.tempMin} and ${trip.tempMax} Degree ${trip.weatherSummary}`
- 
     inputCard.classList.add("hide")
     outputCard.classList.remove("hide")
+    inputCard.classList.remove("card")
+    outputCard.classList.add("card")
 }
