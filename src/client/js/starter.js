@@ -19,27 +19,24 @@ const start = async (city, time) => {
     trip.Latitude = latLng.lat
     trip.Longitude = latLng.lng
     trip.Country = latLng.countryCode
+    trip.City = city
     trip.unixtime = await getUnixTimeCode(time)
     trip.img = await imageUrlBySearchterm(city)
     const weather = await getWeather({"lat": latLng.lat, "lng": latLng.lng, "time": trip.unixtime})
     trip.tempMax = weather.tempHigh
     trip.tempMin = weather.tempLow
-    trip.weatherSummary = weather.Summary
-    document.getElementById("city").innerText = `City: ${city}`
-    document.getElementById("lat").innerText = `Latitude: ${latLng.lat}`
-    document.getElementById("lng").innerText = `Longitude: ${latLng.lng}`
-    document.getElementById("country").innerText = `Country: ${latLng.countryCode}`
-    document.getElementById("weather").innerText = `Weather: ${JSON.stringify(weather)}`
+    trip.weatherSummary = weather.summary
     console.log(trip)
+    updateUI()
 }
 
-start ("Cologne", "2020-03-09")
-
-/* To add later again: 
-export const exchangeImg = (frame, image, alt, delay) => {
-    setTimeout(() => {
-        document.getElementById(frame).src = image
-        document.getElementById(frame).alt = "Picture of "+alt
-    }, delay);
-}   
-*/
+const updateUI = () => {
+    document.getElementById("cityPic").src = trip.img
+    document.getElementById("cityPic").alt = `Image of ${trip.City}`
+    document.getElementById("city").innerText = `City: ${trip.City}`
+    document.getElementById("lat").innerText = `Latitude: ${trip.Latitude}`
+    document.getElementById("lng").innerText = `Longitude: ${trip.Longitude}`
+    document.getElementById("country").innerText = `Country: ${trip.Country}`
+    document.getElementById("weather").innerText = `Weather: Between ${trip.tempMin} and ${trip.tempMax} Degree ${trip.weatherSummary}`
+    document.getElementById("result").classList.remove("hide")
+}
