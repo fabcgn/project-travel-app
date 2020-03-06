@@ -12,7 +12,15 @@ export const listener = submitButton.addEventListener('click',function(event){
     start(city, time)
 })
 
-const trip = {}
+const restartButton = document.getElementById("restartButton")
+export const listener2 = restartButton.addEventListener('click',function(event){
+    event.preventDefault()
+    trip = {}
+    document.getElementById("input").classList.remove("hide")
+    document.getElementById("weatherInfo").classList.add("hide")
+})
+
+let trip = {}
 
 const start = async (city, time) => {
     const latLng = await getLatLng(city)
@@ -38,5 +46,6 @@ const updateUI = () => {
     document.getElementById("lng").innerText = `Longitude: ${trip.Longitude}`
     document.getElementById("country").innerText = `Country: ${trip.Country}`
     document.getElementById("weather").innerText = `Weather: Between ${trip.tempMin} and ${trip.tempMax} Degree ${trip.weatherSummary}`
-    document.getElementById("result").classList.remove("hide")
+    document.getElementById("input").classList.add("hide")
+    document.getElementById("weatherInfo").classList.remove("hide")
 }

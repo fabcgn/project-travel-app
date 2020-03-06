@@ -9,16 +9,19 @@
     <header>
         <h1>Plan your Travel</h1>
     </header>
-    <section id="input">
-        <form action="getTravelInput">
-            <input type="text" name="city" id="cityInput">
-            <input type="date" name="date" id="dateInput">
-            <input id="requestButton" type="submit" value="Request Travel Info">
-        </form>
+    <section>
+        
     </section>
-    <section id="result" class="row hide">
+    <section id="result" class="row">
         <img src="/src/client/media/pictures/old-1130731_640.jpg" alt="Picture of Travel" id="cityPic" class="featureImg">
-        <div id="weatherInfo" class="col"> 
+        <div id="input" class="">
+            <form action="getTravelInput">
+                <input type="text" name="city" id="cityInput">
+                <input type="date" name="date" id="dateInput">
+                <input id="requestButton" type="submit" value="Request Travel Info">
+            </form>
+        </div>
+        <div id="weatherInfo" class="hide"> 
             <ul>
                 <li id="lat">Latitude: </li>
                 <li id="lng">Longitude: </li>
@@ -26,6 +29,7 @@
                 <li id="city">City: </li>
                 <li id="weather">Weather: </li>
             </ul>
+            <button id="restartButton">Change Trip</button>
         </div>
     </section>
     <footer>

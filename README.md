@@ -7,7 +7,7 @@ Still to do:
 [] 
 []
 []
-[] Extra feature: Allow the user to remove the trip.
+[x] Extra feature: Allow the user to remove the trip.
 []
 []
 [] A README file is included detailing the app and all dependencies.
