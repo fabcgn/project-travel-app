@@ -1,9 +1,71 @@
-body {
+div, section, header, footer {
+    padding: 10px;
+    border: white solid thin;
+}
+header{
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+}
+
+p, h1, h2, h3,
+h4, h5, h6 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.card {
+    border: 0px grey solid;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 3px 2px 10px grey;
+    display: flex;
+    flex-direction: row;
+    width: min-content;
+    margin: 10 auto;
+}
+
+.carditem {
+    margin: 10px;
+    width: 300px;
+}
+
+.featureImg {
+    width: 200px;
+    border-radius:5px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.logoBox {
+    display: flex;
+    flex-direction: row;
+  } 
+
+
+
+footer {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    .srcLogo {
+        max-height: 20px;
+        max-width: 80px;
+        text-align: center;
+        margin: 0 auto
+      }
+}
+
+.hide {
+    visibility: hidden;
+}
+
+/* body {
 }
 
 div, section, header, footer {
     border: thin lightgrey solid;
     padding: 10px;
+    display: flex;
 }
 
 .hide {
@@ -18,7 +80,6 @@ h4, h5, h6 {
 
 
 .row {
-    display: flex;
     flex-direction: row;
     justify-content: left;
 }
@@ -30,3 +91,19 @@ h4, h5, h6 {
     object-fit: cover;
 }
 
+footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .srcLogo {
+    height: 20px;
+    text-align: center;
+    margin: 0 auto
+  }
+  
+  .logoBox {
+    display: flex;
+    flex-direction: column;
+  } */
