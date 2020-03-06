@@ -3,6 +3,9 @@ input, button {
     border-radius: 5px;
     margin: 5px;
     width: 100%;
+    &:hover{
+        background-color: linen;;
+    }
 }
 button {
     background-color: lightcoral;
