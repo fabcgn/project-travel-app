@@ -14,12 +14,14 @@ export const listener = submitButton.addEventListener('click',function(event){
 
 const start = async (city, time) => {
     const latLng = await getLatLng(city)
-    const UnixTime = getUnixTimeCode(time)
-    await getWeather({"lat": latLng.lat, "lng": latLng.lng, "time": UnixTime})
+    const UnixTime = await getUnixTimeCode(time)
+    const weather = await getWeather({"lat": latLng.lat, "lng": latLng.lng, "time": UnixTime})
+    console.log(weather)
     await changeImageBySearchterm("cityPic",city)
     document.getElementById("city").innerText = `City: ${city}`
     document.getElementById("lat").innerText = `Latitude: ${latLng.lat}`
     document.getElementById("lng").innerText = `Longitude: ${latLng.lng}`
     document.getElementById("country").innerText = `Country: ${latLng.countryCode}`
+    document.getElementById("weather").innerText = `Weather: ${JSON.stringify(weather)}`
 }
 
