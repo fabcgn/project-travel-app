@@ -3,7 +3,7 @@ Still to do:
 [] One test for express server (Server.js)
 [] One test for the application.js
 [] install service workers
-[] All interactive elements need hover states.
+[x] All interactive elements need hover states.
 [] 
 []
 []
