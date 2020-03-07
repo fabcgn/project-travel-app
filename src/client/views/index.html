@@ -5,6 +5,13 @@
         <title>Plan your Travel</title>
     </head>
     <body>
+        <header id="title">
+            <h1>🗺&nbsp;Travelweather</h1>
+            <p>
+                Simply add the date and place to travel to an receive weather
+                data
+            </p>
+        </header>
         <div id="inputCard" class="card">
             <div>
                 <h2>Plan your Travel</h2>
@@ -26,7 +33,7 @@
                 </form>
             </div>
         </div>
-        <section id="outputCard" class="hide">
+        <section id="outputCard" class="card">
             <img
                 src="/src/client/media/pictures/old-1130731_640.jpg"
                 alt="Picture of Travel"
@@ -34,10 +41,11 @@
                 class="featureImg carditem"
             />
             <div id="weatherInfo" class="carditem">
-                <h1>Weather forcast</h1>
+                <h1>Weather forecast</h1>
                 <h3>
                     for your travels to <span id="city"></span
-                    ><span id="country"></span>
+                    ><span id="country"></span> in
+                    <span id="daysToGo"></span> days
                 </h3>
                 <div id="weather"></div>
                 <button id="restartButton">Change Trip</button>
@@ -48,26 +56,17 @@
                 <p>All images by:</p>
                 <a href="https://pixabay.com/" target="_blank"
                     ><img
-                        src="/src/client/media/logos/pixabay.svg"
+                        src="https://pixabay.com/static/img/logo.png"
                         alt="Pixabay"
                         class="srcLogo"
                 /></a>
             </div>
             <div class="logoBox" id="weaterRef">
-                <p>Weatherdata by:</p>
+                <p>Weatherdata:</p>
                 <a href="https://darksky.net/dev" target="_blank"
                     ><img
-                        src="/src/client/media/logos/darksky.png"
+                        src="https://darksky.net/dev/img/attribution/poweredby-oneline.png"
                         alt="darksky API"
-                        class="srcLogo"
-                /></a>
-            </div>
-            <div class="logoBox" id="locationRef">
-                <p>Locationinfo by:</p>
-                <a href="https://www.geonames.org/" target="_blank"
-                    ><img
-                        src="/src/client/media/logos/geonamesorg.png"
-                        alt="geonames.org"
                         class="srcLogo"
                 /></a>
             </div>

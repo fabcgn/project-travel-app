@@ -1,7 +1,7 @@
 import { getLatLng } from './places'
 import { imageUrlBySearchterm } from './pictures'
 import { getWeather } from './weather'
-import { getUnixTimeCode } from './dateCalc'
+import { getUnixTimeCode, date_diff_indays } from './dateCalc'
 
 const submitButton = document.getElementById("requestButton")
 export const listener = submitButton.addEventListener('click', function (event) {
@@ -39,6 +39,7 @@ const start = async (city, time) => {
     trip.tempMax = weather.tempHigh
     trip.tempMin = weather.tempLow
     trip.weatherSummary = weather.summary
+    trip.daysToGo = date_diff_indays(time)
     console.log(trip)
     updateUI()
 }
@@ -49,6 +50,7 @@ const updateUI = () => {
     document.getElementById("city").innerText = `${trip.City}`
     document.getElementById("country").innerText = `, ${trip.Country}`
     document.getElementById("weather").innerText = `Between ${trip.tempMin} and ${trip.tempMax} Degrees - ${trip.weatherSummary}`
+    document.getElementById("daysToGo").innerText = `${trip.daysToGo}`
     inputCard.classList.add("hide")
     outputCard.classList.remove("hide")
     inputCard.classList.remove("card")
