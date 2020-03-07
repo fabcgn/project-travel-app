@@ -1,9 +1,11 @@
+body {
+}
+
 div,
 section,
 header,
 footer {
     padding: 10px;
-    border: white solid thin;
 }
 
 header {
@@ -49,18 +51,6 @@ h6 {
 .logoBox {
     display: flex;
     flex-direction: row;
-}
-
-footer {
-    display: none;
-    flex-direction: row;
-    align-items: center;
-    .srcLogo {
-        max-height: 20px;
-        max-width: 80px;
-        text-align: center;
-        margin: 0 auto;
-    }
 }
 
 .hide {
