@@ -5,10 +5,7 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const bodyParser = require('body-parser')
-const axios = require('axios').default;
 const fetch = require('node-fetch');
-
-
 
 app.use(cors())
 app.use(express.static('dist'))
@@ -47,5 +44,22 @@ app.post('/darkSky', async (req, res) => {
     console.log(objAPI);
     res.send(objAPI);
 })
+
+app.post('/darkSky', async (req, res) => {
+    console.log(req.body)
+    const url = `https://api.darksky.net/forecast/${darkskyApiKey}/${req.body.lat},${req.body.lng},${req.body.time}`
+    console.log(url)
+    const data = await fetch(url);
+    const weatherData = await data.json();
+    const objAPI = {
+        tempHigh: Math.round(weatherData.daily.data[0].temperatureHigh),
+        tempLow: Math.round(weatherData.daily.data[0].temperatureLow),
+        summary: weatherData.daily.data[0].summary,
+    }
+    console.log(objAPI);
+    res.send(objAPI);
+})
+
+
 
 module.exports = app
