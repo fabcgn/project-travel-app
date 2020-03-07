@@ -27,13 +27,13 @@ app.get('/', function (req, res) {
 // designates what port the app will listen to for incoming requests
 const port = 8080
 app.listen(port, function () {
-    console.log('Example app listening on port '+port+'! Go to http://localhost:'+port+'/')
+    console.log('Example app listening on port ' + port + '! Go to http://localhost:' + port + '/')
 })
 
 // API for DarkSky
 const darkskyApiKey = process.env.DARKSKY_API_KEY
 
-app.post('/darkSky', async (req,res) => {
+app.post('/darkSky', async (req, res) => {
     console.log(req.body)
     const url = `https://api.darksky.net/forecast/${darkskyApiKey}/${req.body.lat},${req.body.lng},${req.body.time}`
     console.log(url)

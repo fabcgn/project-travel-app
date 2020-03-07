@@ -13,5 +13,5 @@ export {
     changeImageBySearchterm,
     getLatLng,
     start
-} 
+}
 */

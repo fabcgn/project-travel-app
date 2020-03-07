@@ -4,16 +4,16 @@ import { getWeather } from './weather'
 import { getUnixTimeCode } from './dateCalc'
 
 const submitButton = document.getElementById("requestButton")
-export const listener = submitButton.addEventListener('click',function(event){
+export const listener = submitButton.addEventListener('click', function (event) {
     event.preventDefault()
     const city = document.getElementById("cityInput").value
     const time = document.getElementById("dateInput").value
-    console.log("clicked "+city)
+    console.log("clicked " + city)
     start(city, time)
 })
 
 const restartButton = document.getElementById("restartButton")
-export const listener2 = restartButton.addEventListener('click',function(event){
+export const listener2 = restartButton.addEventListener('click', function (event) {
     event.preventDefault()
     trip = {}
     inputCard.classList.remove("hide")
@@ -35,7 +35,7 @@ const start = async (city, time) => {
     trip.City = city
     trip.unixtime = await getUnixTimeCode(time)
     trip.img = await imageUrlBySearchterm(city)
-    const weather = await getWeather({"lat": latLng.lat, "lng": latLng.lng, "time": trip.unixtime})
+    const weather = await getWeather({ "lat": latLng.lat, "lng": latLng.lng, "time": trip.unixtime })
     trip.tempMax = weather.tempHigh
     trip.tempMin = weather.tempLow
     trip.weatherSummary = weather.summary

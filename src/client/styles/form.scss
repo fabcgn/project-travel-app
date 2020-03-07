@@ -1,10 +1,11 @@
-input, button {
+input,
+button {
     padding: 10px;
     border-radius: 5px;
     margin: 5px;
     width: 100%;
-    &:hover{
-        background-color: linen;;
+    &:hover {
+        background-color: linen;
     }
 }
 button {
