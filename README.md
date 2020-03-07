@@ -18,6 +18,7 @@ It then conveniently displas it in the frontend again.
 # Installation
 
 run `npm install` to install all dependencies.
+
 add a `.env` file in the root directory and paste die API keys:
 e.g.:
 
@@ -27,6 +28,9 @@ DARKSKY_API_KEY=************************
 ```
 
 run `test` for the automated tests (server has to be not initiated yet)
+
 run `start` for kicking off the express server
+
 run `build-prod` to see it in pruction mode (service workers enables, js and css minified)
+
 run `build-dev` for a live server version for debugging.
