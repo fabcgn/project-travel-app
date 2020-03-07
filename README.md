@@ -15,6 +15,11 @@ It then conveniently displas it in the frontend again.
 -   When Pixabay does not offer any picture results, a default image is shown
 -   Every query shows an other random picture that matches the city name
 
+# Screens
+
+![alt landing Page](https://ibb.co/ZXdq5Zk "Landing Screen")
+![alt Weather Page](https://ibb.co/M8KVnXG "Weather Screen")
+
 # Installation
 
 run `npm install` to install all dependencies.
