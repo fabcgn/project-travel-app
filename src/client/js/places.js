@@ -19,5 +19,6 @@ export const getLatLng = async (city) => {
         return { "lat": lat, "lng": lng, "countryCode": countryCode };
     } catch (error) {
         console.log("ERROR", error)
+        return { "lat": 10, "lng": 50, "countryCode": "US" };
     }
 }

@@ -11,7 +11,7 @@ export const imageUrlBySearchterm = async (searchTerm) => {
         const url = picture.hits[randomEntry].webformatURL
         return url;
     } catch (error) {
-        const url = "/src/client/media/pictures/hiker-918473_640.jpg"
+        const url = "https://cdn.pixabay.com/photo/2017/08/06/12/06/people-2591874_640.jpg"
         console.log("ERROR", error)
         return url
     }
