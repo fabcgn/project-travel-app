@@ -1,51 +1,69 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Plan your Travel</title>
-    
-</head>
-<body>
+  </head>
+  <body>
     <div id="inputCard" class="card">
-        <div>
-            <h1>Plan your Travel</h1>
-        </div>
-        <div id="" class="">
-            <form action="getTravelInput">
-                <p>City name</p>
-                <input type="text" name="city" id="cityInput">
-                <p>Date of Travel</p>
-                <input type="date" name="date" id="dateInput">
-                <button id="requestButton">Request Travel Info</button>
-            </form>
-        </div>
+      <div>
+        <h1>Plan your Travel</h1>
+      </div>
+      <div id="" class="">
+        <form action="getTravelInput">
+          <p>City name</p>
+          <input type="text" name="city" id="cityInput" />
+          <p>Date of Travel</p>
+          <input type="date" name="date" id="dateInput" />
+          <button id="requestButton">Request Travel Info</button>
+        </form>
+      </div>
     </div>
     <section id="outputCard" class="hide">
-        <img src="/src/client/media/pictures/old-1130731_640.jpg" alt="Picture of Travel" id="cityPic" class="featureImg carditem">
-        <div id="weatherInfo" class="carditem"> 
-            <h1>Travel Summary</h1>
-            <ul>
-                <li id="country">Country: </li>
-                <li id="city">City: </li>
-                <li id="weather">Weather: </li>
-            </ul>
-            <button id="restartButton">Change Trip</button>
-        </div>
+      <img
+        src="/src/client/media/pictures/old-1130731_640.jpg"
+        alt="Picture of Travel"
+        id="cityPic"
+        class="featureImg carditem"
+      />
+      <div id="weatherInfo" class="carditem">
+        <h1>Travel Summary</h1>
+        <ul>
+          <li id="country">Country:</li>
+          <li id="city">City:</li>
+          <li id="weather">Weather:</li>
+        </ul>
+        <button id="restartButton">Change Trip</button>
+      </div>
     </section>
     <footer>
-        <div class="logoBox" id="imageRef">
-            <p>All images by:</p>
-            <a href="https://pixabay.com/" target="_blank"><img src="/src/client/media/logos/pixabay.svg" alt="Pixabay" class="srcLogo"></a>
-        </div>
-        <div class="logoBox" id="weaterRef">
-            <p>Weatherdata by:</p>
-            <a href="https://darksky.net/dev" target="_blank"><img src="/src/client/media/logos/darksky.png" alt="darksky API" class="srcLogo"></a>
-        </div>
-        <div class="logoBox" id="locationRef">
-            <p>Locationinfo by:</p>
-            <a href="https://www.geonames.org/" target="_blank"><img src="/src/client/media/logos/geonamesorg.png" alt="geonames.org" class="srcLogo"></a>
-        </div>
+      <div class="logoBox" id="imageRef">
+        <p>All images by:</p>
+        <a href="https://pixabay.com/" target="_blank"
+          ><img
+            src="/src/client/media/logos/pixabay.svg"
+            alt="Pixabay"
+            class="srcLogo"
+        /></a>
+      </div>
+      <div class="logoBox" id="weaterRef">
+        <p>Weatherdata by:</p>
+        <a href="https://darksky.net/dev" target="_blank"
+          ><img
+            src="/src/client/media/logos/darksky.png"
+            alt="darksky API"
+            class="srcLogo"
+        /></a>
+      </div>
+      <div class="logoBox" id="locationRef">
+        <p>Locationinfo by:</p>
+        <a href="https://www.geonames.org/" target="_blank"
+          ><img
+            src="/src/client/media/logos/geonamesorg.png"
+            alt="geonames.org"
+            class="srcLogo"
+        /></a>
+      </div>
     </footer>
-    
-</body>
+  </body>
 </html>
