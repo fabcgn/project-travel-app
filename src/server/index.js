@@ -45,4 +45,21 @@ app.post('/darkSky', async (req, res) => {
     res.send(objAPI);
 })
 
+app.post('/darkSky', async (req, res) => {
+    console.log(req.body)
+    const url = `https://api.darksky.net/forecast/${darkskyApiKey}/${req.body.lat},${req.body.lng},${req.body.time}`
+    console.log(url)
+    const data = await fetch(url);
+    const weatherData = await data.json();
+    const objAPI = {
+        tempHigh: Math.round(weatherData.daily.data[0].temperatureHigh),
+        tempLow: Math.round(weatherData.daily.data[0].temperatureLow),
+        summary: weatherData.daily.data[0].summary,
+    }
+    console.log(objAPI);
+    res.send(objAPI);
+})
+
+
+
 module.exports = app
