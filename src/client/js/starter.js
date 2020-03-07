@@ -46,9 +46,9 @@ const start = async (city, time) => {
 const updateUI = () => {
     document.getElementById("cityPic").src = trip.img
     document.getElementById("cityPic").alt = `Image of ${trip.City}`
-    document.getElementById("city").innerText = `City: ${trip.City}`
-    document.getElementById("country").innerText = `Country: ${trip.Country}`
-    document.getElementById("weather").innerText = `Weather: Between ${trip.tempMin} and ${trip.tempMax} Degree ${trip.weatherSummary}`
+    document.getElementById("city").innerText = `${trip.City}`
+    document.getElementById("country").innerText = `, ${trip.Country}`
+    document.getElementById("weather").innerText = `Between ${trip.tempMin} and ${trip.tempMax} Degrees - ${trip.weatherSummary}`
     inputCard.classList.add("hide")
     outputCard.classList.remove("hide")
     inputCard.classList.remove("card")
