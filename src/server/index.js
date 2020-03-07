@@ -8,8 +8,6 @@ const bodyParser = require('body-parser')
 const axios = require('axios').default;
 const fetch = require('node-fetch');
 
-
-
 app.use(cors())
 app.use(express.static('dist'))
 app.use(express.urlencoded());
@@ -33,19 +31,25 @@ app.listen(port, function () {
 // API for DarkSky
 const darkskyApiKey = process.env.DARKSKY_API_KEY
 
-app.post('/darkSky', async (req, res) => {
-    console.log(req.body)
-    const url = `https://api.darksky.net/forecast/${darkskyApiKey}/${req.body.lat},${req.body.lng},${req.body.time}`
-    console.log(url)
-    const data = await fetch(url);
-    const weatherData = await data.json();
-    const objAPI = {
-        tempHigh: Math.round(weatherData.daily.data[0].temperatureHigh),
-        tempLow: Math.round(weatherData.daily.data[0].temperatureLow),
-        summary: weatherData.daily.data[0].summary,
-    }
-    console.log(objAPI);
-    res.send(objAPI);
-})
 
-module.exports = app
+// Post Route for darkSky API
+app.post("/weather", (req, res) => {
+    console.log("----")
+    console.log(req.query)
+    console.log("----")
+    const lat = req.query.lat
+    const lng = req.query.lng
+    const time = req.query.time
+    axios({
+        method: "get",
+        url: `https://api.darksky.net/forecast/${darkskyApiKey}/${lat},${lng},${time}?exclude=minutly,hourly,alerts,flags`
+    })
+        .then(function (response) {
+            console.log('RESPONSE', response.data.daily);
+            res.json(response.data.daily)
+        })
+        .catch(error => {
+            console.log('ERROR', error)
+            res.send(error)
+        })
+})
