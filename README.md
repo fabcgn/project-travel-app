@@ -17,8 +17,8 @@ It then conveniently displas it in the frontend again.
 
 # Screens
 
-![alt landing Page](https://ibb.co/ZXdq5Zk "Landing Screen")
-![alt Weather Page](https://ibb.co/M8KVnXG "Weather Screen")
+![alt landing Page](https://i.ibb.co/M8KVnXG/Screenshot-2020-03-07-at-14-53-19.png "Landing Screen")
+![alt Weather Page](https://i.ibb.co/M8KVnXG/Screenshot-2020-03-07-at-14-53-19.png "Weather Screen")
 
 # Installation
 
