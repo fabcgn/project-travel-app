@@ -65,7 +65,10 @@ app.post('/darkSky', async (req, res) => {
 // Route to read the objAPI
 app.get('/data', sendObjAPI);
 
-
-
+// Route to clear the objAPI, for debugging without restartign the server (maybe future feature)
+app.get('/dataclear', async (req, res) => {
+    objAPI = {}
+    res.send(objAPI)
+})
 
 module.exports = app
