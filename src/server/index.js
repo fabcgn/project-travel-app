@@ -48,6 +48,7 @@ app.post('/darkSky', async (req, res) => {
     objAPI.city = req.body.city
     objAPI.country = req.body.country
     objAPI.daysToGo = req.body.daysToGo
+    objAPI.cityImg = req.body.cityImg
     const url = `https://api.darksky.net/forecast/${darkskyApiKey}/${req.body.lat},${req.body.lng},${req.body.time}`
     console.log(url)
     const data = await fetch(url);

@@ -10,6 +10,6 @@ export const getWeather = async (apiData) => {
     body: JSON.stringify(apiData)
   })
   const data = await getData.json();
-  console.log(data)
+  // console.log(data)
   return data
 }
