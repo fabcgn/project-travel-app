@@ -27,23 +27,43 @@ app.listen(port, function () {
     console.log('Example app listening on port ' + port + '! Go to http://localhost:' + port + '/')
 })
 
+
+// Object to store all data: Filled with default data
+let objAPI = {}
+
+const sendObjAPI = (request, response) => {
+    console.log("sending objAPI")
+    console.log(objAPI)
+    response.send(objAPI)
+}
+
 // API for DarkSky
 const darkskyApiKey = process.env.DARKSKY_API_KEY
 
 app.post('/darkSky', async (req, res) => {
     console.log(req.body)
+    objAPI.lat = req.body.lat
+    objAPI.lng = req.body.lng
+    objAPI.time = req.body.time
+    objAPI.city = req.body.city
+    objAPI.country = req.body.country
+    objAPI.daysToGo = req.body.daysToGo
+    objAPI.cityImg = req.body.cityImg
     const url = `https://api.darksky.net/forecast/${darkskyApiKey}/${req.body.lat},${req.body.lng},${req.body.time}`
     console.log(url)
     const data = await fetch(url);
     const weatherData = await data.json();
-    const objAPI = {
-        tempHigh: Math.round(weatherData.daily.data[0].temperatureHigh),
-        tempLow: Math.round(weatherData.daily.data[0].temperatureLow),
-        summary: weatherData.daily.data[0].summary,
-    }
-    console.log(objAPI);
+
+    objAPI.tempHigh = Math.round(weatherData.daily.data[0].temperatureHigh)
+    objAPI.tempLow = Math.round(weatherData.daily.data[0].temperatureLow)
+    objAPI.summary = weatherData.daily.data[0].summary
     res.send(objAPI);
 })
+
+
+
+// Route to read the objAPI
+app.get('/data', sendObjAPI);
 
 
 
