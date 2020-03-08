@@ -1,4 +1,44 @@
 
+@media only screen and (max-width: 700px) {
+    .card {
+        border: 0px grey solid;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 3px 2px 10px grey;
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: 10 auto;
+        height: min-content;
+        .featureImg {
+            width: 100px;
+            border-radius: 5px;
+            height: 100px;
+            object-fit: cover;
+        }
+    }
+}
+
+@media only screen and (min-width: 700px) {
+.card {
+    border: 0px grey solid;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 3px 2px 10px grey;
+    display: flex;
+    flex-direction: row;
+    width: 600px;
+    margin: 10 auto;
+    height: min-content;
+    .featureImg {
+        width: 200px;
+        border-radius: 5px;
+        height: 200px;
+        object-fit: cover;
+    }
+}
+}
+
 
 div,
 section,
@@ -31,23 +71,7 @@ h6 {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.card {
-    border: 0px grey solid;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 3px 2px 10px grey;
-    display: flex;
-    flex-direction: row;
-    width: 600px;
-    margin: 10 auto;
-    height: min-content;
-    .featureImg {
-        width: 200px;
-        border-radius: 5px;
-        height: 200px;
-        object-fit: cover;
-    }
-}
+
 
 .carditem {
     margin: 10px;
@@ -63,23 +87,3 @@ h6 {
     display: none;
 }
 
-
-@media only screen and (max-width: 700px) {
-    .card {
-        border: 0px grey solid;
-        padding: 15px;
-        border-radius: 5px;
-        box-shadow: 3px 2px 10px grey;
-        display: flex;
-        flex-direction: column;
-        width: 90%;
-        margin: 10 auto;
-        height: min-content;
-        .featureImg {
-            width: 100px;
-            border-radius: 5px;
-            height: 100px;
-            object-fit: cover;
-        }
-    }
-}
