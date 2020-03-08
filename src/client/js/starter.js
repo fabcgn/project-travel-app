@@ -31,8 +31,8 @@ const start = async (city, time) => {
     const latLng = await getLatLng(city)
     const Unixtime = await getUnixTimeCode(time)
     const cityImg = await imageUrlBySearchterm(city)
-    objAPI.daysToGo = date_diff_indays(time)
-    const objAPIserver = await getWeather({ "lat": latLng.lat, "lng": latLng.lng, "time": Unixtime, "city": city, "country": latLng.countryCode, "daysToGo": objAPI.daysToGo, "cityImg": cityImg})
+    const daysToGo = date_diff_indays(time)
+    const objAPIserver = await getWeather({ "lat": latLng.lat, "lng": latLng.lng, "time": Unixtime, "city": city, "country": latLng.countryCode, "daysToGo": daysToGo, "cityImg": cityImg})
     objAPI = objAPIserver
     console.log(objAPI)
     updateUI()
