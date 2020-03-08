@@ -35,7 +35,7 @@ const start = async (city, time) => {
     trip.City = city
     trip.unixtime = await getUnixTimeCode(time)
     trip.img = await imageUrlBySearchterm(city)
-    const weather = await getWeather({ "lat": latLng.lat, "lng": latLng.lng, "time": trip.unixtime })
+    const weather = await getWeather({ "lat": latLng.lat, "lng": latLng.lng, "time": trip.unixtime, "city": trip.City, "country": trip.Country })
     trip.tempMax = weather.tempHigh
     trip.tempMin = weather.tempLow
     trip.weatherSummary = weather.summary
