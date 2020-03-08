@@ -39,7 +39,12 @@ let objAPI = {
     summary: "Partly Cloudy",
     time: 1585267200
 }
-console.log(objAPI)
+
+const sendObjAPI = (request, response) => {
+    console.log("sending objAPI")
+    console.log(objAPI)
+    response.send(objAPI)
+}
 
 // API for DarkSky
 const darkskyApiKey = process.env.DARKSKY_API_KEY
@@ -59,10 +64,13 @@ app.post('/darkSky', async (req, res) => {
     objAPI.tempHigh = Math.round(weatherData.daily.data[0].temperatureHigh)
     objAPI.tempLow = Math.round(weatherData.daily.data[0].temperatureLow)
     objAPI.summary = weatherData.daily.data[0].summary
-
-    console.log(objAPI);
     res.send(objAPI);
 })
+
+
+
+// Route to read the objAPI
+app.get('/data', sendObjAPI);
 
 
 
